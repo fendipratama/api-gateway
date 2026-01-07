@@ -1,0 +1,17 @@
+version: "3.9"
+
+services:
+  app:
+    image: ghcr.io/fendipratama/api-gateway:latest
+    container_name: go-app
+    restart: always
+    env_file:
+      - .env
+    ports:
+      - "8080:8080"
+    networks:
+      - app-net
+
+networks:
+  app-net:
+    driver: bridge
