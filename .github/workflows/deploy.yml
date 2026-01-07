@@ -44,6 +44,6 @@ jobs:
           port: ${{ secrets.VPS_SSH_PORT }}
           script: |
             docker pull ghcr.io/fendipratama/api-gateway:latest
-            cd /var/www/go-app
+            cd /var/www/api-gateway
             docker compose up -d
             docker image prune -f
